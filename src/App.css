@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+body, body *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
   min-height: 100vh;
+  background: url("vegetables-fruits.jpg") center/450px repeat;
+}
+
+form{
+  padding: 1rem;
+  background-color: orange;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input{
+  border-radius: 6px;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-control{
+  padding: 0.6rem;
+  color: gray;
+}
+
+.form-control:focus{
+  outline: none;
+}
+
+[type="submit"]{
+  cursor: pointer;
+  background-color: orangered;
+  padding: 0.5rem;color: white;
+  font-weight: bold;
+  max-width: 100px;
+  box-shadow: inset 1px 1px 2px rgba(250, 250, 250, 0.8), 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+[type="submit"]:hover{
+  opacity: 0.9;
+}
+
+#recipes{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+/* ----------------------------- media */
+/* ----------------------------- 1 */
+@media screen and (max-width:576px){
+  html{
+    font-size: 13px;
   }
-  to {
-    transform: rotate(360deg);
+
+  form{
+    flex-flow: column nowrap;
+    margin-bottom: 1rem;
+    /* align-items: center; */
+  }
+
+  [type="submit"]{
+    margin-top: 0.5rem;
+    align-self: center;
+    }
+}
+
+/* ----------------------------- 2 */
+@media screen and (min-width:576px) and (max-width:769px){
+  html{
+    font-size: 15px;
+  }
+
+  form{
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-control{
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+    min-width: 400px;
+  }
+  [type="submit"]{
+    margin-left: 0.4rem;
+  }
+}
+/* ----------------------------- 3 */
+@media screen and (min-width:769px){
+  html{
+    font-size: 16px;
+  }
+
+  form{
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+    
+  .form-control{
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+    min-width: 400px;
+  }
+  [type="submit"]{
+    margin-left: 0.4rem;
   }
 }
